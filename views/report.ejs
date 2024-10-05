@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: #fff;
+            margin: 20px;
+            padding: 20px;
+            background-size: cover;
+            min-height: 100vh;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #00fff0;
+            text-shadow: 0 0 20px #00fff0, 0 0 30px #00fff0;
+        }
+
+        .result {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .feedback-section, .insights-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00fff0;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+        }
+
+        .feedback-section h2, .insights-section h2 {
+            font-size: 2em;
+            text-shadow: 0 0 20px #f0f, 0 0 30px #f0f;
+        }
+
+        .feedback {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .feedback p {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 1px solid #00fff0;
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+
+        .insights-section p {
+            font-size: 1.3em;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+    </style>
+    <!-- Importing a spacey font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Quiz Results</h1>
+
+    <div class="result">
+        <p><strong>Total Questions:</strong> <%= total %></p>
+        <p><strong>Correct Answers:</strong> <%= correct %></p>
+        <p><strong>Incorrect Answers:</strong> <%= incorrect %></p>
+    </div>
+
+    <div class="feedback-section">
+        <h2>Feedback on Incorrect Answers</h2>
+        <% if (feedback.length > 0) { %>
+            <% feedback.forEach(function(fb) { %>
+                <div class="feedback">
+                    <p><strong>Question:</strong> <%= fb.question %></p>
+                    <p><strong>Your Answer:</strong> <%= fb.userAnswer %></p>
+                    <p><strong>Correct Answer:</strong> <%= fb.correctAnswer %></p>
+                    <p><strong>Explanation:</strong> <%= fb.explanation %></p>
+                </div>
+                <hr>
+            <% }); %>
+        <% } else { %>
+            <p>You got all answers correct! Well done!</p>
+        <% } %>
+    </div>
+
+    <% if (insights) { %>
+        <div class="insights-section">
+            <h2>AI-Generated Insights</h2>
+            <p><%= insights %></p>
+        </div>
+    <% } %>
+
+</body>
+</html>
