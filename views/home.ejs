@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout Example</title>
+    <link rel="stylesheet" href="css/home.css"> <!-- Link to CSS file -->
+   
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+</head> <style>
+
+    #api-frame {
+        position: absolute; /* Position absolutely within the container */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        border: none; /* Remove default iframe border */
+    }
+</style>
+<body>
+    
+    <div class="grid-container">
+        <div class="grid-item" >Column 1</div>
+        <div class="grid-item mid-column model-container">
+            <iframe title="JWST (james webb space telescope) 3D model - Sketchfab" class="c-viewer__iframe" 
+            src="https://sketchfab.com/models/6c92c08a672640afb58ee44d248fd0fe/embed?autostart=1&amp;internal=1&amp;tracking=0&amp;ui_ar=0&amp;ui_infos=0&amp;ui_snapshots=1&amp;ui_stop=0&amp;ui_theatre=1&amp;ui_watermark=0" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking="true" 
+            execution-while-out-of-viewport="true" execution-while-not-rendered="true" web-share="true" allowfullscreen=""></iframe>
+        </div>
+        <div class="grid-item">Column 3</div>
+        <div class="grid-item">Column 4</div>
+        <div class="grid-item mid-column">Column 5 (Wider)</div>
+        <div class="grid-item">Column 6</div>
+    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="js/home.js"></script> 
+</body>
+</html>

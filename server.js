@@ -37,9 +37,16 @@ let currentQuestionIndex = 0;
 app.get("/", (req,res)=>{
     res.render("app" , {questions : questions})
 })
+
+
+
 app.get("/home", (req,res)=>{
-    res.render("home" , {questions : questions})
+    res.render("home")
 })
+
+
+
+
 app.get('/api/question', (req, res) => {
     const question = questions[currentQuestionIndex];
     if (question) {

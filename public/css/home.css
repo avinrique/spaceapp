@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Set body height to 100% of viewport height */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Middle column takes 2x the space of the others */
+    grid-template-rows: 1fr 1fr; /* Two rows that take up equal height */
+    gap: 10px; /* Space between items */
+    height: 100vh; /* Set height to 100% of viewport height */
+    width: 100vw; /* Set width to 100% of viewport width */
+    padding: 10px; /* Padding around the grid */
+    box-sizing: border-box; /* Include padding in the total width/height */
+}
+
+.grid-item {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.mid-column {
+    background-color: #2196F3; /* Blue background for the middle column */
+    position: relative; /* Allow absolute positioning inside */
+}
+
+#model-container {
+    width: 100%; /* Full width of the column */
+    height: 100%; /* Full height of the column */
+    position: absolute; /* Positioning to fill the parent */
+    top: 0;
+    left: 0;
+}
